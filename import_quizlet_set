@@ -8,4 +8,4 @@ case $(uname -s) in
 		exit 1
 		;;
 esac
-$paste_cmd >"${1}.csv" && printf "\n" >>"${1}.csv"
+$paste_cmd >"$1" && printf "\n" >>"$1"

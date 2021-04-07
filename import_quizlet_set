@@ -1,0 +1,11 @@
+#!/bin/sh
+case $(uname -s) in
+	Darwin)
+		paste_cmd=pbpaste
+		;; 
+	*)
+		echo 'Not implemented.'
+		exit 1
+		;;
+esac
+$paste_cmd >"${1}.csv" && printf "\n" >>"${1}.csv"

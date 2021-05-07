@@ -1,0 +1,3 @@
+#!/bin/sh
+#seq -w 1 12|xargs -I% sh -c 'python3 printpinvoc.py <voc%.tsv >pinvoc%.tsv'
+seq -w 1 12 |xargs -I% bash -c "echo 'FILE %';diff  -u <(cut -d $'\t' -f 1 voc%.tsv )   <(cut -d ' ' -f 1 pinvoc%.tsv) "|less
